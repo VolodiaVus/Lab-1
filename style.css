@@ -58,6 +58,11 @@ body {
   text-decoration: none;
   color: #1F1534;
   opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+  opacity: 0.8;
 }
 
 .nav a.active {
@@ -66,13 +71,14 @@ body {
 }
 
 .hero {
-  padding: 60px;
+  padding: 60px 0;
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .hero-text {
@@ -84,12 +90,14 @@ body {
   font-weight: bold;
   margin-bottom: 25px;
   color: #000;
+  line-height: 1.2;
 }
 
 .hero-text p {
   font-size: 21px;
   color: #7D7987;
   margin-bottom: 40px;
+  line-height: 1.5;
 }
 
 .btn {
@@ -101,6 +109,13 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
+  transition: all 0.3s ease;
+  border: 2px solid #458FF6;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #458FF6;
 }
 
 .hero-img img {
@@ -108,16 +123,12 @@ body {
   width: 100%;
 }
 
-.healthcare {
-  padding: 80px 0;
-  background-color: #fff;
-}
-
 .container-healthcare {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 80px;
+  padding: 100px 0;
 }
 
 .img-healthcare {
@@ -150,7 +161,6 @@ body {
   margin-bottom: 30px;
   border-radius: 0;
   border: none;
-  margin-bottom: 30px;
 }
 
 .healthcare-text p {
@@ -175,8 +185,14 @@ body {
   font-size: 18px;
   width: 200px;
   height: 56px;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
+.btn-outline:hover {
+  background: #458FF6;
+  color: white;
+}
 
 .services {
   padding: 100px 0;
@@ -208,6 +224,7 @@ body {
   color: #7d7987;
   max-width: 950px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .services-grid {
@@ -222,8 +239,12 @@ body {
   border-radius: 20px;
   padding: 40px;
   box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  transition: transform 0.3s ease;
 }
 
+.service-card:hover {
+  transform: translateY(-5px);
+}
 
 .service-card img {
   width: 90px;
@@ -288,7 +309,8 @@ body {
   display: flex;
   gap: 170px;
   position: absolute;
-  left: 666px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footer-btn {
@@ -302,9 +324,273 @@ body {
   white-space: nowrap;
 }
 
+.footer-btn:hover {
+  opacity: 1;
+}
+
 .simple-footer-button {
   content: '';
   width: 100px;
   flex-shrink: 0;
+}
+
+@media (max-width: 320px) {
+  .container,
+  .header-container,
+  .hero-container,
+  .hero-text,
+  .container-healthcare,
+  .healthcare-text,
+  .services-header,
+  .service-card,
+  .simple-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav li {
+    margin: 0 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  .logo-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .container-healthcare {
+    padding: 50px 0;
+    gap: 40px;
+  }
+
+  .img-healthcare {
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-healthcare img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .healthcare-text h2 {
+    font-size: 28px;
+  }
+
+  .healthcare-text .line {
+    margin-bottom: 30px;
+  }
+
+  .healthcare-text p,
+  .btn-outline {
+    font-size: 16px;
+  }
+
+  .btn-outline {
+    width: 180px;
+    height: 50px;
+    padding: 12px 25px;
+  }
+
+  .services {
+    padding: 50px 0;
+  }
+
+  .services-header h2 {
+    font-size: 28px;
+  }
+
+  .services-header p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .service-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  .services-button {
+    justify-content: center;
+  }
+
+  .simple-footer {
+    padding: 30px 0;
+    margin-top: 40px;
+  }
+
+  .simple-footer-buttons {
+    position: static;
+    transform: none;
+    gap: 15px;
+  }
+
+  .simple-footer-button {
+    display: none;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInAnim 1s ease forwards;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pulse-btn {
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pulse-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.6);
+}
+
+.services-grid .service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); 
+}
+.menu-button {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  z-index: 1100;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 10px; 
+}
+
+.menu-button span {
+  position: absolute;
+  height: 3px;
+  width: 24px;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  transform-origin: center;
+}
+
+
+.menu-button span:nth-child(1) {
+  top: 4px; 
+}
+.menu-button span:nth-child(2) {
+  top: 10px; 
+}
+.menu-button span:nth-child(3) {
+  top: 16px;  
+}
+
+
+.menu-button.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px; 
+}
+.menu-button.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-button.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px; 
+}
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu.active {
+  transform: translateY(0);
+}
+
+.menu ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.menu-link {
+  display: block;
+  margin: 20px 0;
+  font-size: 22px;
+  text-decoration: none;
+  color: #222;
 }
 
